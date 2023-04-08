@@ -1,0 +1,8 @@
+@use '../../assets/styles/customVariables.scss' as variables;
+
+.Workspace {
+  grid-area: variables.$workspaceGridAreaName;
+  width: variables.$calculatorWorkspaceWidth;
+  height: variables.$calculatorWorkspaceHeight;
+  background-color: darkgreen;
+}

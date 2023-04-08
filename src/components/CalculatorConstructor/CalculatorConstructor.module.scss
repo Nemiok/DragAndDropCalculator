@@ -1,0 +1,12 @@
+@use '../../assets/styles/customVariables.scss' as variables;
+
+.CalculatorConstructor {
+  grid-area: variables.$constructorGridAreaName;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: variables.$calculatorConstructorResultDeskHeight variables.$calculatorConstructorOperatorsDeskHeight variables.$calculatorConstructorNumbersDeskHeight variables.$calculatorConstructorEqualityOperatorDeskHeight;
+  row-gap: variables.$calculatorConstructorGridRowGap;
+  width: variables.$calculatorConstructorWidth;
+  height: variables.$calculatorConstructorHeight;
+  background-color: variables.$calculatorConstructorDeskBackgroundColor;
+}

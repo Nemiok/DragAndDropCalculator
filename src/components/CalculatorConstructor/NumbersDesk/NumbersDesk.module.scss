@@ -1,0 +1,11 @@
+@use '../../../assets/styles/customVariables.scss' as variables;
+
+.NumbersDesk {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  gap: variables.$calculatorConstructorNumbersDeskGap;
+  padding: variables.$calculatorConstructorNumbersDeskPadding;
+  box-shadow: variables.$calculatorConstructorDeskBoxShadow;
+  border-radius: variables.$calculatorConstructorDeskBorderRadius;
+}

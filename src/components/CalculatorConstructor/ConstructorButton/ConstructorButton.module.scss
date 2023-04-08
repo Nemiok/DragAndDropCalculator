@@ -1,0 +1,7 @@
+@use '../../../assets/styles/customVariables.scss' as variables;
+
+.ConstructorButton {
+  font-size: variables.$calculatorButtonsFontSize;
+  line-height: variables.$calculatorButtonsLineHeight;
+  padding: variables.$calculatorConstructorOperandButtonPadding;
+}

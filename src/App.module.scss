@@ -1,0 +1,20 @@
+@use './assets/styles/customVariables.scss' as variables;
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
+}
+
+.App__Conainer {
+  display: grid;
+  width: variables.$calculatorContainerWidth;
+  row-gap: variables.$calculatorGridRowGap;
+  column-gap: variables.$calculatorGridColumnGap;
+  grid-template-areas: '#{variables.$waySwitcherGridAreaName} #{variables.$waySwitcherGridAreaName}'
+  '#{variables.$constructorGridAreaName} #{variables.$workspaceGridAreaName}';
+}

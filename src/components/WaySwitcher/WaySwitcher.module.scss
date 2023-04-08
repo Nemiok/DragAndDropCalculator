@@ -1,0 +1,9 @@
+@use '../../assets/styles/customVariables.scss' as variables;
+
+.WaySwitcher {
+  grid-area: variables.$waySwitcherGridAreaName;
+  justify-self: end;
+  width: variables.$calculatorWaySwitcherWidth;
+  height: variables.$calculatorWaySwitcherHeight;
+  background-color: burlywood;
+}

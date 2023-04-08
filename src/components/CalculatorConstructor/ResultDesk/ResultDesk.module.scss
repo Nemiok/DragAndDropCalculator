@@ -1,0 +1,7 @@
+@use '../../../assets/styles/customVariables.scss' as variables;
+
+.ResultDesk {
+  padding: variables.$calculatorConstructorResultDeskPadding;
+  box-shadow: variables.$calculatorConstructorDeskBoxShadow;
+  border-radius: variables.$calculatorConstructorDeskBorderRadius;
+}

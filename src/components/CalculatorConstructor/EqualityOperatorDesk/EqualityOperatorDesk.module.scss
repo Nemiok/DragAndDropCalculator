@@ -1,0 +1,7 @@
+@use '../../../assets/styles/customVariables.scss' as variables;
+
+.EqualityOperatorDesk {
+  padding: variables.$calculatorConstructorEqualityOperatorDeskPadding;
+  box-shadow: variables.$calculatorConstructorDeskBoxShadow;
+  border-radius: variables.$calculatorConstructorDeskBorderRadius;
+}
