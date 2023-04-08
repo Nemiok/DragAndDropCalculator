@@ -14,6 +14,7 @@ TECHNOLOGIES USED:
 3. SCSS
 4. Javascript
 5. Redux
+6. Vite
 
 
 ...IN PROGRESS...
