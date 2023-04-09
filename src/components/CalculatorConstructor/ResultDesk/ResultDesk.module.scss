@@ -1,7 +1,22 @@
-@use '../../../assets/styles/customVariables.scss' as variables;
+@use '../../../assets/styles/customVariablesConstructor.scss' as variables;
 
 .ResultDesk {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
   padding: variables.$calculatorConstructorResultDeskPadding;
   box-shadow: variables.$calculatorConstructorDeskBoxShadow;
   border-radius: variables.$calculatorConstructorDeskBorderRadius;
+}
+
+.ResultContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: variables.$calculatorConstructorResultContainerPadding;
+  font-size: variables.$calculatorConstructorResultContainerFontSize;
+  line-height: variables.$calculatorConstructorResultContainerLineHeight;
+  color: variables.$calculatorConstructorResultContainerTextColor;
+  background-color: variables.$calculatorConstructorResultContainerBackgroundColor;
+  border-radius: variables.$calculatorConstructorResultContainerBorderRadius;
 }

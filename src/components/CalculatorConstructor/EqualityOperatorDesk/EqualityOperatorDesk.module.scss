@@ -1,7 +1,16 @@
-@use '../../../assets/styles/customVariables.scss' as variables;
+@use '../../../assets/styles/customVariablesConstructor.scss' as variables;
 
 .EqualityOperatorDesk {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
   padding: variables.$calculatorConstructorEqualityOperatorDeskPadding;
   box-shadow: variables.$calculatorConstructorDeskBoxShadow;
   border-radius: variables.$calculatorConstructorDeskBorderRadius;
+}
+
+.EqualityOperatorButton {
+  background-color: variables.$calculatorConstructorEqualityOperatorBackgroundColor !important;
+  color: variables.$calculatorConstructorEqualityOperatorTextColor;
+  border-radius: variables.$calculatorConstructorEqualityOperatorBorderRadius;
 }

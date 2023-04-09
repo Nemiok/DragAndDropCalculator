@@ -1,8 +1,19 @@
-@use '../../../assets/styles/customVariables.scss' as variables;
+@use '../../../assets/styles/customVariablesConstructor.scss' as variables;
 
 .OperatorsDesk {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  gap: variables.$calculatorConstructorOperatorsDeskGap;
   padding: variables.$calculatorConstructorOperatorsDeskPadding;
   box-shadow: variables.$calculatorConstructorDeskBoxShadow;
   border-radius: variables.$calculatorConstructorDeskBorderRadius;
+}
 
+.ConstructorOperatorButton {
+  font-size: variables.$calculatorButtonsFontSize;
+  line-height: variables.$calculatorButtonsLineHeight;
+  border: variables.$calculatorConstructorOperatorBorderWidth variables.$calculatorConstructorOperatorBorderStyle variables.$calculatorConstructorOperatorBorderColor;
+  font-weight: variables.$calculatorConstructorOperatorFontWeight;
+  border-radius: variables.$calculatorConstructorOperatorBorderRadius;
 }

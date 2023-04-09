@@ -1,0 +1,94 @@
+// grid area-name
+
+$constructorGridAreaName: calculatorConstructor;
+$waySwitcherGridAreaName: switcher;
+$workspaceGridAreaName: workspace;
+
+// grid-column
+
+$beforeLastOperandButtonGridColumn: span 2;
+
+// gap
+
+$calculatorGridRowGap: 1.875rem; // 30px
+$calculatorGridColumnGap: 3.5rem; // 56px
+$calculatorConstructorGridRowGap: 0.75rem; // 12px
+$calculatorConstructorNumbersDeskGap: 0.5rem; // 8px
+$calculatorConstructorOperatorsDeskGap: $calculatorConstructorNumbersDeskGap;
+
+// width
+
+$calculatorConstructorWidth: 15rem; // 240px
+$calculatorWorkspaceWidth: 15.25rem; // 244px
+$calculatorWaySwitcherWidth: $calculatorWorkspaceWidth;
+$calculatorContainerWidth: calc($calculatorConstructorWidth + $calculatorWorkspaceWidth + $calculatorGridColumnGap);
+
+// height
+
+$calculatorWaySwitcherHeight: 2.375rem; // 38px
+$calculatorWorkspaceHeight: 28rem; // 448px
+$calculatorConstructorHeight: $calculatorWorkspaceHeight;
+$calculatorConstructorResultDeskHeight: 3.75rem; // 60px
+$calculatorConstructorEqualityOperatorDeskHeight: 4.5rem; // 72px
+$calculatorConstructorNumbersDeskHeight: 14rem; // 224px
+$calculatorConstructorOperatorsDeskHeight: 3.5rem; // 56px
+
+// padding
+
+$calculatorConstructorDeskPadding: 0.25rem; // 4px
+$calculatorConstructorResultDeskPadding: $calculatorConstructorDeskPadding;
+$calculatorConstructorEqualityOperatorDeskPadding: $calculatorConstructorDeskPadding;
+$calculatorConstructorNumbersDeskPadding: $calculatorConstructorDeskPadding;
+$calculatorConstructorOperatorsDeskPadding: $calculatorConstructorDeskPadding;
+$calculatorConstructorResultContainerPadding: 0.25rem 0.5rem; // 4px 8px
+
+// box-shadow
+
+$calculatorConstructorDeskBoxShadow: 0px 2px 4px rgba(0, 0, 0, 0.06), 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+// border-radius
+
+$calculatorConstructorDeskBorderRadius: .25rem; // 4px
+$calculatorConstructorOperandNumberBorderRadius: 0.375rem; // 6px
+$calculatorConstructorOperatorBorderRadius: $calculatorConstructorOperandNumberBorderRadius;
+$calculatorConstructorEqualityOperatorBorderRadius: $calculatorConstructorOperandNumberBorderRadius;
+$calculatorConstructorResultContainerBorderRadius: $calculatorConstructorOperandNumberBorderRadius;
+
+// borderHeight
+
+$calculatorConstructorOperandNumberBorderWidth: 1px;
+$calculatorConstructorOperatorBorderWidth: $calculatorConstructorOperandNumberBorderWidth;
+// border-style
+
+$calculatorConstructorOperandNumberBorderStyle: solid;
+$calculatorConstructorOperatorBorderStyle: solid;
+
+// font-size 
+
+$calculatorButtonsFontSize: 1rem; // 16px
+$calculatorConstructorResultContainerFontSize: 2.25rem; // 36px
+
+// font-weight
+
+$calculatorConstructorOperandButtonFontWeight: 600;
+$calculatorConstructorOperatorFontWeight: $calculatorConstructorOperandButtonFontWeight;
+$calculatorConstructorResultContainerFontWeight: 800;
+
+// line-height
+
+$calculatorButtonsLineHeight: 0.9375rem; // 15px
+$calculatorConstructorResultContainerLineHeight: 2.75rem; // 44px
+
+// background-color
+
+$calculatorConstructorDeskBackgroundColor: #ffffff;
+$calculatorConstructorDeskButtonsColor: #ffffff;
+$calculatorConstructorEqualityOperatorBackgroundColor: #5D5FEF;
+$calculatorConstructorResultContainerBackgroundColor: #F3F4F6;
+
+// color
+$calculatorConstructorOperandButtonTextColor: #000000;
+$calculatorConstructorOperandButtonBorderColor: #E2E3E5;
+$calculatorConstructorOperatorBorderColor: $calculatorConstructorOperandButtonBorderColor;
+$calculatorConstructorEqualityOperatorTextColor: #ffffff;
+$calculatorConstructorResultContainerTextColor: #111827;

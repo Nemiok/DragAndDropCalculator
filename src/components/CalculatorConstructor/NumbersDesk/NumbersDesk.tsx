@@ -11,7 +11,10 @@ const NumbersDesk = () => {
 
   return (
     <div className={styles.NumbersDesk}>
-      {numbers.map((num) => (<ConstructorButton key={num} clickHandler={handleOperandButtonClick} value={num} />))}
+      {numbers.map((num, index) => (
+        index == numbers.length - 2 ?
+          <ConstructorButton customClass={`${styles.ConstructorOperandButton} ${styles.BeforeLastOperandButton}`} key={num} clickHandler={handleOperandButtonClick} value={num} /> :
+          <ConstructorButton customClass={styles.ConstructorOperandButton} key={num} clickHandler={handleOperandButtonClick} value={num} />))}
     </div>
   )
 }

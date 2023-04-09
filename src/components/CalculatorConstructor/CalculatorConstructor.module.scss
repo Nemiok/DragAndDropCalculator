@@ -1,4 +1,4 @@
-@use '../../assets/styles/customVariables.scss' as variables;
+@use '../../assets/styles/customVariablesConstructor.scss' as variables;
 
 .CalculatorConstructor {
   grid-area: variables.$constructorGridAreaName;

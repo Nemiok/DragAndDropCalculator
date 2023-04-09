@@ -4,19 +4,17 @@ import styles from './ConstructorButton.module.scss'
 interface IConstructorButtonProps {
   value: string,
   clickHandler: React.MouseEventHandler<HTMLButtonElement>,
-  customStyles?: React.CSSProperties
+  customClass?: string
 }
 
 const ConstructorButton = (props: IConstructorButtonProps) => {
 
-  const { clickHandler, value, customStyles } = props
+  const { clickHandler, value, customClass } = props
 
   return (
     <button
-      className={styles.ConstructorButton}
-      style={{ ...customStyles }}
+      className={`${styles.ConstructorButton} ${customClass}`}
       onClick={clickHandler}>
-
       {value}
     </button>
   )
