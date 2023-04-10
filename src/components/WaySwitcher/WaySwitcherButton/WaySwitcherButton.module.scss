@@ -1,0 +1,22 @@
+@use '../../../assets/styles/customVariablesWaySwitcher.scss' as variables;
+
+.WaySwitcherButton {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: variables.$calculatorWaySwitcherButtonBackgroundColor;
+  border-radius: variables.$calculatorWaySwitcherButtonBorderRadius;
+  height: 100%;
+}
+
+.WaySwitcherButtonText {
+  font-size: variables.$calculatorWaySwitcherButtonFontSize;
+  line-height: variables.$calculatorWaySwitcherButtonLineHeight;
+  color: variables.$calculatorWaySwitcherButtonTextColor;
+  font-weight: variables.$calculatorWaySwitcherButtonFontWeight;
+}
+
+.WaySwitcherButtonSVGContainer {
+  display: flex;
+}

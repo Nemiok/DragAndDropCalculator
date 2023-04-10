@@ -1,9 +1,14 @@
 @use '../../assets/styles/customVariablesConstructor.scss' as variables;
+@use '../../assets/styles/customVariablesWaySwitcher.scss' as switcherVariables;
 
 .WaySwitcher {
   grid-area: variables.$waySwitcherGridAreaName;
   justify-self: end;
+  display: flex;
+  padding: switcherVariables.$calculatorWaySwitcherContainerPadding;
+  align-items: center;
   width: variables.$calculatorWaySwitcherWidth;
   height: variables.$calculatorWaySwitcherHeight;
-  background-color: burlywood;
+  background-color: switcherVariables.$calculatorWaySwitcherContainerBackgroundColor;
+  border-radius: switcherVariables.$calculatorWaySwitcherContainerBorderRadius;
 }
