@@ -16,5 +16,7 @@ TECHNOLOGIES USED:
 5. Redux
 6. Vite
 
+TO START PROJECT: 
+npm run dev
 
 ...IN PROGRESS...
