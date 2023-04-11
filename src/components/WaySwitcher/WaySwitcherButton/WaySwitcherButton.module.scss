@@ -5,9 +5,25 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background-color: variables.$calculatorWaySwitcherButtonBackgroundColor;
   border-radius: variables.$calculatorWaySwitcherButtonBorderRadius;
   height: 100%;
+}
+
+.WaySwitcherButton_active {
+  background-color: variables.$calculatorWaySwitcherActiveButtonBackgroundColor;
+
+  svg path {
+    stroke: variables.$calculatorWaySwitcherActiveButtonSVGColor;
+  }
+}
+
+.WaySwitcherButton_default {
+  background-color: variables.$calculatorWaySwitcherDefaultButtonBackgroundColor;
+
+
+  svg path {
+    stroke: variables.$calculatorWaySwitcherDefaultButtonSVGColor;
+  }
 }
 
 .WaySwitcherButtonText {

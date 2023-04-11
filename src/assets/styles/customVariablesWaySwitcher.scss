@@ -22,8 +22,14 @@ $calculatorWaySwitcherButtonBorderRadius: 0.3125rem; // 5px
 // background-color
 
 $calculatorWaySwitcherContainerBackgroundColor: #F3F4F6;
-$calculatorWaySwitcherButtonBackgroundColor: #FFFFFF;
+$calculatorWaySwitcherActiveButtonBackgroundColor: #FFFFFF;
+$calculatorWaySwitcherDefaultButtonBackgroundColor: $calculatorWaySwitcherContainerBackgroundColor;
 
 // color
 
 $calculatorWaySwitcherButtonTextColor: #4D5562;
+
+// svg`s color
+
+$calculatorWaySwitcherActiveButtonSVGColor: #5D5FEF;
+$calculatorWaySwitcherDefaultButtonSVGColor: $calculatorWaySwitcherButtonTextColor;
