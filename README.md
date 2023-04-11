@@ -12,9 +12,8 @@ TECHNOLOGIES USED:
 1. React
 2. Typescript
 3. SCSS
-4. Javascript
-5. Redux
-6. Vite
+4. Redux
+5. Vite
 
 TO START PROJECT: 
 npm run dev
