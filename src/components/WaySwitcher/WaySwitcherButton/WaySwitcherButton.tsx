@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { calculatorSVGs } from '../../../utils/entities/calculatorSVGs';
 import styles from './WaySwitcherButton.module.scss'
 

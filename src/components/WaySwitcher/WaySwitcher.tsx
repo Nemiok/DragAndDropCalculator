@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
 import { setCurrentWay } from '../../store/reducers/currentWayReducer'
 import { stateNames } from '../../utils/entities/stateNames'
@@ -6,9 +6,10 @@ import styles from './WaySwitcher.module.scss'
 import WaySwitcherButton from './WaySwitcherButton'
 
 const WaySwitcher = () => {
-  const dispatch = useAppDispatch()
   const runtimeWay = stateNames.runtimeWay
   const constructorWay = stateNames.constructorWay
+
+  const dispatch = useAppDispatch()
   const currentWay = useAppSelector(state => state.currentWay)
 
   const [isActiveRuntimeButton, setIsActiveRuntimeButton] = currentWay === stateNames.runtimeWay ? useState<boolean>(true) : useState<boolean>(false)

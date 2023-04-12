@@ -1,0 +1,31 @@
+@use '../../../assets/styles/customVariablesWorkspace.scss' as variables;
+
+.WorkspaceConstructionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.WorkspaceConstructionItem {
+  text-align: center;
+}
+
+.WorkspaceConstructionItem_special {
+  margin: variables.$calculatorWorkspaceSpecialItemMargin;
+  font-size: variables.$calculatorWorkspaceSpecialItemFontSize;
+  font-weight: variables.$calculatorWorkspaceSpecialItemFontWeight;
+  line-height: variables.$calculatorWorkspaceSpecialItemLineHeight;
+  color: variables.$calculatorWorkspaceSpecialItemTextColor;
+}
+
+.WorkspaceConstructionItem_common {
+  max-width: variables.$calculatorWorkspaceCommonItemMaxWidth;
+  font-size: variables.$calculatorWorkspaceCommonItemFontSize;
+  line-height: variables.$calculatorWorkspaceCommonItemLineHeight;
+  color: variables.$calculatorWorkspaceCommonItemTextColor;
+}
+
+.WorkspaceConstructionItem_image {
+  margin: variables.$calculatorWorkspaceImageItemMargin;
+}

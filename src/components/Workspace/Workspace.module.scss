@@ -1,8 +1,15 @@
 @use '../../assets/styles/customVariablesConstructor.scss' as variables;
+@use '../../assets/styles/customVariablesWorkspace.scss' as workspaceVariables;
 
 .Workspace {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   grid-area: variables.$workspaceGridAreaName;
   width: variables.$calculatorWorkspaceWidth;
   height: variables.$calculatorWorkspaceHeight;
-  background-color: darkgreen;
+  background-color: workspaceVariables.$calculatorWorkspaceContainerBackgroundColor;
+  border: workspaceVariables.$calculatorWorkspaceContainerBorderWidth dashed workspaceVariables.$calculatorWorkspaceContainerBorderColor;
+  border-radius: workspaceVariables.$calculatorWorkspaceContainerBorderRadius;
 }

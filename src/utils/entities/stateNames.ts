@@ -7,3 +7,4 @@ export const stateNames: IStateNames = {
   constructorWay: 'Constructor',
   runtimeWay: 'Runtime'
 }
+
