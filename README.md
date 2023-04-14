@@ -2,7 +2,7 @@
 
 "Drag and Drop Calculator" is a calculator that has Drag and Drop functionality.
 
-The functionality is provided with react-beautiful-dnd.
+The functionality is provided with react-dnd library.
 
 The goal of D&D functionality here is to provide user with ability to design calculator according to his or her taste.
 
