@@ -10,6 +10,10 @@
   border-radius: variables.$calculatorConstructorDeskBorderRadius;
 }
 
+.NumbersDesk_isDragging {
+  opacity: variables.$calculatorConstructorDeskOpacity_isDragging;
+}
+
 .ConstructorOperandButton {
   font-size: variables.$calculatorButtonsFontSize;
   line-height: variables.$calculatorButtonsLineHeight;

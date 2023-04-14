@@ -13,3 +13,7 @@
   border: workspaceVariables.$calculatorWorkspaceContainerBorderWidth dashed workspaceVariables.$calculatorWorkspaceContainerBorderColor;
   border-radius: workspaceVariables.$calculatorWorkspaceContainerBorderRadius;
 }
+
+.Workspace_isOver {
+  background-color: workspaceVariables.$calculatorWorkspaceContainerBackgroundColor_isOver;
+}

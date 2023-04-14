@@ -12,7 +12,6 @@ function App() {
         <WaySwitcher />
         <CalculatorConstructor />
         <Workspace />
-
       </section>
     </main>
   )
