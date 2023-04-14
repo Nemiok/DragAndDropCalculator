@@ -16,28 +16,9 @@ function App() {
     <main className={styles.App}>
       <section className={styles.App__Conainer}>
         <WaySwitcher />
+        <CalculatorConstructor />
+        <Workspace />
 
-        <DragDropContext onDragEnd={handleDragDrop}>
-
-          <Droppable droppableId='CONSTRUCTOR'>
-            {(provided) => (
-              <div {...provided.droppableProps} ref={provided.innerRef} >
-                <CalculatorConstructor placeholder={provided.placeholder} />
-                {provided.placeholder}
-              </div>
-            )}
-          </Droppable>
-
-          <Droppable droppableId='WORKSPACE' >
-            {(provided) => (
-              <div {...provided.droppableProps} ref={provided.innerRef}>
-                <Workspace />
-                {provided.placeholder}
-              </div>
-            )}
-          </Droppable>
-
-        </DragDropContext>
       </section>
     </main>
   )

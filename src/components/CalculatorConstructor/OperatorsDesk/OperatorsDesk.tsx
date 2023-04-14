@@ -1,15 +1,8 @@
-import { DraggableProvided } from 'react-beautiful-dnd'
 import { calculatorOperators } from '../../../utils/entities/calculatorOperators'
 import ConstructorButton from '../ConstructorButton'
 import styles from './OperatorsDesk.module.scss'
-import { forwardRef } from 'react'
 
-interface IOperatorsDeskProps extends Omit<DraggableProvided, 'innerRef'> {
-
-}
-
-const OperatorsDesk = forwardRef<HTMLDivElement, IOperatorsDeskProps>((props, ref) => {
-  const { dragHandleProps, draggableProps } = props
+const OperatorsDesk = () => {
 
   const operators = calculatorOperators
 
@@ -18,10 +11,10 @@ const OperatorsDesk = forwardRef<HTMLDivElement, IOperatorsDeskProps>((props, re
   }
 
   return (
-    <div {...dragHandleProps} {...draggableProps} ref={ref} className={styles.OperatorsDesk}>
+    <div className={styles.OperatorsDesk}>
       {operators.map((operator) => (<ConstructorButton customClass={styles.ConstructorOperatorButton} key={operator} clickHandler={handleOperatorButtonClick} value={operator} />))}
     </div>
   )
-})
+}
 
 export default OperatorsDesk

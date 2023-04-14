@@ -1,4 +1,3 @@
-import { forwardRef } from 'react'
 import styles from './Workspace.module.scss'
 import WorkspaceConstruction from './WorkspaceConstruction'
 
