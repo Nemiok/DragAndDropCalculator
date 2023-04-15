@@ -8,6 +8,8 @@ The goal of D&D functionality here is to provide user with ability to design cal
 
 Figma layout: https://www.figma.com/file/pdYzuOkvXY3Q00YRAMsLuz/Calculator-Constructor
 
+https://drag-and-drop-calculator-nemiok.vercel.app/
+
 TECHNOLOGIES USED:
 1. React
 2. Typescript
