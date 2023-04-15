@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
+  height: variables.$calculatorConstructorResultDeskHeight;
   padding: variables.$calculatorConstructorResultDeskPadding;
   box-shadow: variables.$calculatorConstructorDeskBoxShadow;
   border-radius: variables.$calculatorConstructorDeskBorderRadius;
@@ -23,4 +24,9 @@
 
 .ResultContainer_isDragging {
   opacity: variables.$calculatorConstructorDeskOpacity_isDragging;
+}
+
+.ResultContainer_didDrop {
+  opacity: variables.$calculatorConstructorDeskOpacity_isDragging;
+  pointer-events: none;
 }

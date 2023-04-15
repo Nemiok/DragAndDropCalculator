@@ -17,3 +17,18 @@
 .Workspace_isOver {
   background-color: workspaceVariables.$calculatorWorkspaceContainerBackgroundColor_isOver;
 }
+
+.Workspace_hasDropped {
+  border: none;
+}
+
+.CalculatorConstructor {
+  grid-area: variables.$constructorGridAreaName;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  row-gap: variables.$calculatorConstructorGridRowGap;
+  width: variables.$calculatorConstructorWidth;
+  height: variables.$calculatorConstructorHeight;
+  background-color: variables.$calculatorConstructorDeskBackgroundColor;
+}

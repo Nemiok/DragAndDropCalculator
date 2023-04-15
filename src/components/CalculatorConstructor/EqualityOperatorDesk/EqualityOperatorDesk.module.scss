@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
+  height: variables.$calculatorConstructorEqualityOperatorDeskHeight;
   padding: variables.$calculatorConstructorEqualityOperatorDeskPadding;
   box-shadow: variables.$calculatorConstructorDeskBoxShadow;
   border-radius: variables.$calculatorConstructorDeskBorderRadius;
@@ -11,6 +12,11 @@
 
 .EqualityOperatorDesk_isDragging {
   opacity: variables.$calculatorConstructorDeskOpacity_isDragging;
+}
+
+.EqualityOperatorDesk_didDrop {
+  opacity: variables.$calculatorConstructorDeskOpacity_isDragging;
+  pointer-events: none;
 }
 
 .EqualityOperatorButton {

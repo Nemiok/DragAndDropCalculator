@@ -1,9 +1,11 @@
+import constructionStateSlice from './reducers/constructionStateReducer';
 import currentWayReducer from './reducers/currentWayReducer';
 import { configureStore } from '@reduxjs/toolkit'
 
 const store = configureStore({
   reducer: {
     currentWay: currentWayReducer,
+    constructionState: constructionStateSlice,
   },
 })
 

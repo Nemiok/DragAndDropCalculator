@@ -5,6 +5,6 @@ interface IStateNames {
 
 export const stateNames: IStateNames = {
   constructorWay: 'Constructor',
-  runtimeWay: 'Runtime'
+  runtimeWay: 'Runtime',
 }
 

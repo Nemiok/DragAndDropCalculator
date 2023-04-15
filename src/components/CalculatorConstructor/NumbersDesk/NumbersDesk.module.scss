@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: repeat(4, 1fr);
+  height: variables.$calculatorConstructorNumbersDeskHeight;
   gap: variables.$calculatorConstructorNumbersDeskGap;
   padding: variables.$calculatorConstructorNumbersDeskPadding;
   box-shadow: variables.$calculatorConstructorDeskBoxShadow;
@@ -12,6 +13,11 @@
 
 .NumbersDesk_isDragging {
   opacity: variables.$calculatorConstructorDeskOpacity_isDragging;
+}
+
+.NumbersDesk_didDrop {
+  opacity: variables.$calculatorConstructorDeskOpacity_isDragging;
+  pointer-events: none;
 }
 
 .ConstructorOperandButton {
