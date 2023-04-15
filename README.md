@@ -16,7 +16,9 @@ TECHNOLOGIES USED:
 5. Vite
 
 TO START PROJECT: 
+
 npm install
+
 npm run dev
 
 ...IN PROGRESS...
