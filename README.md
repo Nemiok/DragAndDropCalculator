@@ -12,10 +12,11 @@ TECHNOLOGIES USED:
 1. React
 2. Typescript
 3. SCSS
-4. Redux
+4. Redux-toolkit
 5. Vite
 
 TO START PROJECT: 
+npm install
 npm run dev
 
 ...IN PROGRESS...
