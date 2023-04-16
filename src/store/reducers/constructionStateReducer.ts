@@ -1,7 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { stateNames } from '../../utils/entities/stateNames'
 
-interface IConstructionStatePayload {
+export interface IConstructionStatePayload {
   id: string,
+  currentWay: string
 }
 
 const initialState: IConstructionStatePayload[] = []
@@ -17,11 +19,11 @@ export const constructionStateSlice = createSlice({
     },
 
     removeItem(state, action: PayloadAction<IConstructionStatePayload>) {
-      const targetItemIndex = state.findIndex(item => item.id === action.payload.id)
-      const copiedState = [...state]
-      copiedState.splice(targetItemIndex, 1)
-      if (targetItemIndex === -1) return
-      return copiedState
+      if (action.payload.currentWay === stateNames.constructorWay) {
+        const filteredItems = state.filter(desk => desk.id !== action.payload.id)
+        return filteredItems
+      }
+      return state
     }
   },
 })

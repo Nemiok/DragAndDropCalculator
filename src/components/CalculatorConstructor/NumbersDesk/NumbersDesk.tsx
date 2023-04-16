@@ -2,17 +2,23 @@ import { useDrag } from 'react-dnd'
 import { calculatorOperands } from '../../../utils/entities/calculatorOperands'
 import ConstructorButton from '../ConstructorButton'
 import { idFieldStrings, typeFieldStrings } from '../../../utils/entities/reactDnDHookStrings'
-import styles from './NumbersDesk.module.scss'
-import { useState } from 'react'
+import { useRef } from 'react'
 import { useAppSelector } from '../../../store/hooks'
 import { stateNames } from '../../../utils/entities/stateNames'
+import { IDeskProps } from '../../../utils/types/deskTypes'
+import styles from './NumbersDesk.module.scss'
+import { useListenerOnDeskDblclick } from '../../../hooks/useListenerOnDeskDblclick'
 
-const NumbersDesk = () => {
+interface INumbersDeskProps extends IDeskProps {
+}
 
-  const [didDrop, setDidDrop] = useState<boolean>(false)
+const NumbersDesk = (props: INumbersDeskProps) => {
+  const { isInWorkspace } = props
 
+  const reference = useRef<HTMLDivElement>(null)
   const currentWay = useAppSelector(state => state.currentWay)
-  const constructionState = useAppSelector(state => state.constructionState)
+
+  useListenerOnDeskDblclick(idFieldStrings.calculatorOperandsDeskId, reference, currentWay)
 
   const numbers = calculatorOperands
 
@@ -24,11 +30,6 @@ const NumbersDesk = () => {
   const [{ isDragging }, drag] = useDrag(() => ({
     type: typeFieldStrings.calculatorDeskType,
     item: { id: idFieldStrings.calculatorOperandsDeskId },
-    end: (draggedItem, monitor) => {
-      const hasAlreadyBeenAdded = constructionState.find(item => item.id === draggedItem.id)
-      if (hasAlreadyBeenAdded) return
-      setDidDrop(monitor.didDrop())
-    },
     collect: (monitor) => ({
       isDragging: !!monitor.isDragging()
     })
@@ -36,11 +37,13 @@ const NumbersDesk = () => {
 
 
   return (
-    <div ref={drag} className={`${styles.NumbersDesk} ${isDragging && styles.NumbersDesk_isDragging} ${didDrop && styles.NumbersDesk_didDrop}`}>
-      {numbers.map((num, index) => (
-        index == numbers.length - 2 ?
-          <ConstructorButton customClass={`${styles.ConstructorOperandButton} ${styles.BeforeLastOperandButton}`} key={num} clickHandler={handleOperandButtonClick} value={num} /> :
-          <ConstructorButton customClass={styles.ConstructorOperandButton} key={num} clickHandler={handleOperandButtonClick} value={num} />))}
+    <div ref={drag}>
+      <div ref={reference} className={`${styles.NumbersDesk} ${isDragging && styles.NumbersDesk_isDragging} ${isInWorkspace && styles.NumbersDesk_didDrop}`}>
+        {numbers.map((num, index) => (
+          index == numbers.length - 2 ?
+            <ConstructorButton customClass={`${styles.ConstructorOperandButton} ${styles.BeforeLastOperandButton}`} key={num} clickHandler={handleOperandButtonClick} value={num} /> :
+            <ConstructorButton customClass={styles.ConstructorOperandButton} key={num} clickHandler={handleOperandButtonClick} value={num} />))}
+      </div>
     </div>
   )
 }

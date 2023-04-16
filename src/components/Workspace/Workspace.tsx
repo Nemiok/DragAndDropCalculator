@@ -14,6 +14,8 @@ const Workspace = () => {
   const dispatch = useAppDispatch()
 
   const constructionState = useAppSelector(state => state.constructionState)
+  const currentWay = useAppSelector(state => state.currentWay)
+
   const hasDropped = constructionState.length !== 0
 
   const [{ isOver }, drop] = useDrop(() => ({
@@ -28,10 +30,7 @@ const Workspace = () => {
   }))
 
   const addItemToWorkspace = (id: string) => {
-
-    console.log(id, constructionState)
-
-    dispatch(updateConstructionState({ id }))
+    dispatch(updateConstructionState({ id, currentWay }))
   }
 
   return (

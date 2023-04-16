@@ -1,39 +1,42 @@
 import { useDrag } from 'react-dnd'
 import ConstructorButton from '../ConstructorButton'
 import { idFieldStrings, typeFieldStrings } from '../../../utils/entities/reactDnDHookStrings'
-import { useState } from 'react'
+import { useRef } from 'react'
 import { useAppSelector } from '../../../store/hooks'
 import { stateNames } from '../../../utils/entities/stateNames'
+import { IDeskProps } from '../../../utils/types/deskTypes'
 import styles from './EqualityOperatorDesk.module.scss'
+import { useListenerOnDeskDblclick } from '../../../hooks/useListenerOnDeskDblclick'
 
-const EqualityOperatorDesk = () => {
+interface IEqualityOperatorProps extends IDeskProps {
 
+}
+const EqualityOperatorDesk = (props: IEqualityOperatorProps) => {
+  const { isInWorkspace } = props
+  const reference = useRef<HTMLDivElement>(null)
   const currentWay = useAppSelector(state => state.currentWay)
-  const constructionState = useAppSelector(state => state.constructionState)
+
+  useListenerOnDeskDblclick(idFieldStrings.calculatorEqualityDeskId, reference, currentWay)
 
   const handleEqualityButtonClick = () => {
     if (currentWay === stateNames.constructorWay) return
     console.log('equality has been clicked')
   }
 
-  const [didDrop, setDidDrop] = useState<boolean>(false)
-
   const [{ isDragging }, drag] = useDrag(() => ({
     type: typeFieldStrings.calculatorDeskType,
     item: { id: idFieldStrings.calculatorEqualityDeskId },
-    end: (draggedItem, monitor) => {
-      const hasAlreadyBeenAdded = constructionState.find(item => item.id === draggedItem.id)
-      if (hasAlreadyBeenAdded) return
-      setDidDrop(monitor.didDrop())
-    },
+
     collect: (monitor) => ({
       isDragging: !!monitor.isDragging()
     })
   }))
 
   return (
-    <div ref={drag} className={`${styles.EqualityOperatorDesk} ${isDragging && styles.EqualityOperatorDesk_isDragging} ${didDrop && styles.EqualityOperatorDesk_didDrop}`}>
-      <ConstructorButton customClass={styles.EqualityOperatorButton} value='=' clickHandler={handleEqualityButtonClick} />
+    <div ref={drag}>
+      <div ref={reference} className={`${styles.EqualityOperatorDesk} ${isDragging && styles.EqualityOperatorDesk_isDragging} ${isInWorkspace && styles.EqualityOperatorDesk_didDrop}`}>
+        <ConstructorButton customClass={styles.EqualityOperatorButton} value='=' clickHandler={handleEqualityButtonClick} />
+      </div>
     </div>
   )
 }
