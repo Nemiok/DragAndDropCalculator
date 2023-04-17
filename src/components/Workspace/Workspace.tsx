@@ -9,9 +9,16 @@ import NumbersDesk from '../CalculatorConstructor/NumbersDesk'
 import EqualityOperatorDesk from '../CalculatorConstructor/EqualityOperatorDesk'
 import ResultDesk from '../CalculatorConstructor/ResultDesk'
 import styles from './Workspace.module.scss'
+import CleaningDesk from '../CalculatorConstructor/CleaningDesk/CleaningDesk'
+import { Reducer, useReducer } from 'react'
+import { reducer } from '../../utils/functions/calculatorCountReducer'
+import { ICalculatorReactReducerAction, ICalculatorReactReducerState } from '../../utils/types/utilityFunctionTypes'
 
 const Workspace = () => {
-  const dispatch = useAppDispatch()
+
+  const [calculatorReducerState, dispatch] = useReducer<Reducer<ICalculatorReactReducerState, ICalculatorReactReducerAction>>(reducer, {} as ICalculatorReactReducerState)
+
+  const storeDispatch = useAppDispatch()
 
   const constructionState = useAppSelector(state => state.constructionState)
   const currentWay = useAppSelector(state => state.currentWay)
@@ -30,7 +37,7 @@ const Workspace = () => {
   }))
 
   const addItemToWorkspace = (id: string) => {
-    dispatch(updateConstructionState({ id, currentWay }))
+    storeDispatch(updateConstructionState({ id, currentWay }))
   }
 
   return (
@@ -42,13 +49,15 @@ const Workspace = () => {
           {constructionState.map((el): any => {
             switch (el.id) {
               case idFieldStrings.calculatorOperatorsDeskId:
-                return <OperatorsDesk key={el.id} />
+                return <OperatorsDesk calculatorReducerDispatch={dispatch} calculatorReducerState={calculatorReducerState} key={el.id} />
               case idFieldStrings.calculatorOperandsDeskId:
-                return <NumbersDesk key={el.id} />
+                return <NumbersDesk calculatorReducerDispatch={dispatch} calculatorReducerState={calculatorReducerState} key={el.id} />
               case idFieldStrings.calculatorEqualityDeskId:
-                return <EqualityOperatorDesk key={el.id} />
+                return <EqualityOperatorDesk calculatorReducerDispatch={dispatch} calculatorReducerState={calculatorReducerState} key={el.id} />
               case idFieldStrings.calculatorResultDeskId:
-                return <ResultDesk key={el.id} />
+                return <ResultDesk calculatorReducerDispatch={dispatch} calculatorReducerState={calculatorReducerState} key={el.id} />
+              case idFieldStrings.calculatorCleaningDeskId:
+                return <CleaningDesk calculatorReducerDispatch={dispatch} calculatorReducerState={calculatorReducerState} key={el.id} />
               default: return null
             }
           })}

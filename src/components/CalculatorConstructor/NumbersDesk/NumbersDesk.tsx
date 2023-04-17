@@ -1,5 +1,5 @@
 import { useDrag } from 'react-dnd'
-import { calculatorOperands } from '../../../utils/entities/calculatorOperands'
+import { ICalculatorOperand, calculatorOperands } from '../../../utils/entities/calculatorOperands'
 import ConstructorButton from '../ConstructorButton'
 import { idFieldStrings, typeFieldStrings } from '../../../utils/entities/reactDnDHookStrings'
 import { useRef } from 'react'
@@ -8,22 +8,24 @@ import { stateNames } from '../../../utils/entities/stateNames'
 import { IDeskProps } from '../../../utils/types/deskTypes'
 import styles from './NumbersDesk.module.scss'
 import { useListenerOnDeskDblclick } from '../../../hooks/useListenerOnDeskDblclick'
+import { ACTIONS } from '../../../utils/entities/calculatorReducerActions'
 
 interface INumbersDeskProps extends IDeskProps {
 }
 
 const NumbersDesk = (props: INumbersDeskProps) => {
-  const { isInWorkspace } = props
+  const { isInWorkspace, calculatorReducerDispatch } = props
 
   const reference = useRef<HTMLDivElement>(null)
   const currentWay = useAppSelector(state => state.currentWay)
 
   useListenerOnDeskDblclick(idFieldStrings.calculatorOperandsDeskId, reference, currentWay)
 
-  const numbers = calculatorOperands
-
-  const handleOperandButtonClick = () => {
+  const handleOperandButtonClick = (e: React.MouseEvent<HTMLButtonElement>, digit: ICalculatorOperand) => {
     if (currentWay === stateNames.constructorWay) return
+    if (calculatorReducerDispatch !== undefined) {
+      calculatorReducerDispatch({ type: ACTIONS.ADD_DIGIT, payload: { digit } })
+    }
     console.log('clicked operand')
   }
 
@@ -39,10 +41,10 @@ const NumbersDesk = (props: INumbersDeskProps) => {
   return (
     <div ref={drag}>
       <div ref={reference} className={`${styles.NumbersDesk} ${isDragging && styles.NumbersDesk_isDragging} ${isInWorkspace && styles.NumbersDesk_didDrop}`}>
-        {numbers.map((num, index) => (
-          index == numbers.length - 2 ?
-            <ConstructorButton customClass={`${styles.ConstructorOperandButton} ${styles.BeforeLastOperandButton}`} key={num} clickHandler={handleOperandButtonClick} value={num} /> :
-            <ConstructorButton customClass={styles.ConstructorOperandButton} key={num} clickHandler={handleOperandButtonClick} value={num} />))}
+        {calculatorOperands.map((num, index) => (
+          index == calculatorOperands.length - 2 ?
+            <ConstructorButton customClass={`${styles.ConstructorOperandButton} ${styles.BeforeLastOperandButton}`} key={num} clickHandler={(e) => handleOperandButtonClick(e, num)} value={num} /> :
+            <ConstructorButton customClass={styles.ConstructorOperandButton} key={num} clickHandler={(e) => handleOperandButtonClick(e, num)} value={num} />))}
       </div>
     </div>
   )

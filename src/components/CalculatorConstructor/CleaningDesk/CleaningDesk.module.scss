@@ -1,0 +1,29 @@
+@use '../../../assets/styles/customVariablesConstructor.scss' as variables;
+
+.CleaningDesk {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  height: variables.$calculatorConstructorCleaningDeskHeight;
+  gap: variables.$calculatorConstructorCleaningDeskGap;
+  padding: variables.$calculatorConstructorCleaningDeskPadding;
+  box-shadow: variables.$calculatorConstructorDeskBoxShadow;
+  border-radius: variables.$calculatorConstructorDeskBorderRadius;
+}
+
+.CleaningDesk_isDragging {
+  opacity: variables.$calculatorConstructorDeskOpacity_isDragging;
+}
+
+.CleaningDesk_didDrop {
+  opacity: variables.$calculatorConstructorDeskOpacity_isDragging;
+  pointer-events: none;
+}
+
+.ConstructorOperatorButton {
+  font-size: variables.$calculatorButtonsFontSize;
+  line-height: variables.$calculatorButtonsLineHeight;
+  border: variables.$calculatorConstructorOperatorBorderWidth variables.$calculatorConstructorOperatorBorderStyle variables.$calculatorConstructorOperatorBorderColor;
+  font-weight: variables.$calculatorConstructorOperatorFontWeight;
+  border-radius: variables.$calculatorConstructorOperatorBorderRadius;
+}

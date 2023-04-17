@@ -7,12 +7,14 @@ import { stateNames } from '../../../utils/entities/stateNames'
 import { IDeskProps } from '../../../utils/types/deskTypes'
 import styles from './EqualityOperatorDesk.module.scss'
 import { useListenerOnDeskDblclick } from '../../../hooks/useListenerOnDeskDblclick'
+import { ACTIONS } from '../../../utils/entities/calculatorReducerActions'
 
 interface IEqualityOperatorProps extends IDeskProps {
 
 }
 const EqualityOperatorDesk = (props: IEqualityOperatorProps) => {
-  const { isInWorkspace } = props
+  const { isInWorkspace, calculatorReducerDispatch } = props
+
   const reference = useRef<HTMLDivElement>(null)
   const currentWay = useAppSelector(state => state.currentWay)
 
@@ -20,7 +22,11 @@ const EqualityOperatorDesk = (props: IEqualityOperatorProps) => {
 
   const handleEqualityButtonClick = () => {
     if (currentWay === stateNames.constructorWay) return
+    if (calculatorReducerDispatch !== undefined) {
+      calculatorReducerDispatch({ type: ACTIONS.EVALUATE })
+    }
     console.log('equality has been clicked')
+
   }
 
   const [{ isDragging }, drag] = useDrag(() => ({

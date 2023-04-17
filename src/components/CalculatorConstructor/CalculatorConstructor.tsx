@@ -7,6 +7,7 @@ import OperatorsDesk from './OperatorsDesk'
 import ResultDesk from './ResultDesk'
 import { stateNames } from '../../utils/entities/stateNames'
 import { idFieldStrings } from '../../utils/entities/reactDnDHookStrings'
+import CleaningDesk from './CleaningDesk/CleaningDesk'
 
 const CalculatorConstructor = () => {
 
@@ -16,6 +17,8 @@ const CalculatorConstructor = () => {
   const isOperandsDeskInWorkspace = !!constructionState.find(desk => desk.id === idFieldStrings.calculatorOperandsDeskId)
   const isOperatorsDeskInWorkspace = !!constructionState.find(desk => desk.id === idFieldStrings.calculatorOperatorsDeskId)
   const isEqualityDeskInWorkspace = !!constructionState.find(desk => desk.id === idFieldStrings.calculatorEqualityDeskId)
+  const isCleaningDeskInWorkspace = !!constructionState.find(desk => desk.id === idFieldStrings.calculatorCleaningDeskId)
+
 
   const [isVisible, setIsVisible] = useState<boolean>(true)
 
@@ -28,6 +31,7 @@ const CalculatorConstructor = () => {
       {isVisible ?
         <>
           <ResultDesk isInWorkspace={isResultDeskInWorkspace} />
+          <CleaningDesk isInWorkspace={isCleaningDeskInWorkspace} />
           <OperatorsDesk isInWorkspace={isOperatorsDeskInWorkspace} />
           <NumbersDesk isInWorkspace={isOperandsDeskInWorkspace} />
           <EqualityOperatorDesk isInWorkspace={isEqualityDeskInWorkspace} />

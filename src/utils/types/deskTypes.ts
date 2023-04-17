@@ -1,3 +1,7 @@
+import { ICalculatorReactReducerAction, ICalculatorReactReducerState } from "./utilityFunctionTypes";
+
 export interface IDeskProps {
-  isInWorkspace?: boolean
+  isInWorkspace?: boolean,
+  calculatorReducerState?: ICalculatorReactReducerState,
+  calculatorReducerDispatch?: React.Dispatch<ICalculatorReactReducerAction>
 }

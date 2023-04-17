@@ -4,16 +4,15 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  height: variables.$calculatorConstructorResultDeskHeight;
   padding: variables.$calculatorConstructorResultDeskPadding;
   box-shadow: variables.$calculatorConstructorDeskBoxShadow;
   border-radius: variables.$calculatorConstructorDeskBorderRadius;
 }
 
 .ResultContainer {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr minmax(variables.$calculatorConstructorResultDeskHeight, auto);
   padding: variables.$calculatorConstructorResultContainerPadding;
   font-size: variables.$calculatorConstructorResultContainerFontSize;
   line-height: variables.$calculatorConstructorResultContainerLineHeight;
@@ -29,4 +28,20 @@
 .ResultContainer_didDrop {
   opacity: variables.$calculatorConstructorDeskOpacity_isDragging;
   pointer-events: none;
+}
+
+.ResultContainer__previousOperand {
+  justify-self: end;
+  color: variables.$calculatorConstructorResultContainerTextColor__previousOperand;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.ResultContainer__currentOperand {
+  justify-self: end;
+  color: variables.$calculatorConstructorResultContainerTextColor;
+  font-size: 2.5rem;
+  word-wrap: break-word;
+  word-break: break-all;
 }
