@@ -9,10 +9,10 @@ import NumbersDesk from '../CalculatorConstructor/NumbersDesk'
 import EqualityOperatorDesk from '../CalculatorConstructor/EqualityOperatorDesk'
 import ResultDesk from '../CalculatorConstructor/ResultDesk'
 import styles from './Workspace.module.scss'
-import CleaningDesk from '../CalculatorConstructor/CleaningDesk/CleaningDesk'
 import { Reducer, useReducer } from 'react'
 import { reducer } from '../../utils/functions/calculatorCountReducer'
 import { ICalculatorReactReducerAction, ICalculatorReactReducerState } from '../../utils/types/utilityFunctionTypes'
+import CleaningDesk from '../CalculatorConstructor/CleaningDesk'
 
 const Workspace = () => {
 

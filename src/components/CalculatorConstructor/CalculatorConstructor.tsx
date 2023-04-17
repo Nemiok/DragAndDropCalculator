@@ -7,7 +7,7 @@ import OperatorsDesk from './OperatorsDesk'
 import ResultDesk from './ResultDesk'
 import { stateNames } from '../../utils/entities/stateNames'
 import { idFieldStrings } from '../../utils/entities/reactDnDHookStrings'
-import CleaningDesk from './CleaningDesk/CleaningDesk'
+import CleaningDesk from './CleaningDesk'
 
 const CalculatorConstructor = () => {
 
