@@ -9,8 +9,8 @@ export interface ICalculatorReactReducerState {
 }
 
 export interface ICalculatorReactReducerAction {
-  type: string,
-  payload: {
+  type: Partial<IActions> | string,
+  payload?: {
     operation?: ICalculatorOperation,
     digit?: string
   }
